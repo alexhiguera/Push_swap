@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://www.google.es/url?sa=i&url=https%3A%2F%2Fgithub.com%2FAbla-ouh%2FPush_swap&psig=AOvVaw1HvtEgxQYArWkuQVvMiZEq&ust=1706408672439000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKi-6-zB_IMDFQAAAAAdAAAAABAD" alt="Push_swap 42 project badge"/>
+  <img src="https://raw.githubusercontent.com/ridaelfagrouch/push_swap_42/main/assets/push_swap.png" alt="Push_swap 42 project badge"/>
 </p>
 
 # Push swap
