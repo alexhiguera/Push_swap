@@ -36,29 +36,41 @@ El programa solo puede trabajar con dos pilas, la pila A y la pila B. Todos los 
 
 Las posibles acciones son:
 ``pa`` (empujar A): toma el primer elemento en la parte superior de B y colócalo en la parte superior de A. No hagas nada si B está vacío.
+
 ``pb`` (empujar B): Tome el primer elemento en la parte superior de A y colóquelo en la parte superior de B. No haga nada si A está vacío.
+
 ``sa`` (intercambio A): intercambia los primeros 2 elementos en la parte superior de la pila A. No hagas nada si solo hay uno o ningún elemento.
+
 ``sb`` (intercambio B): intercambia los primeros 2 elementos en la parte superior de la pila B. No hagas nada si solo hay uno o ningún elemento.
+
 ``ss``: ``sa`` y ``sb`` al mismo tiempo.
+
 ``ra`` (rotar A): desplaza todos los elementos de la pila A hacia arriba en 1. El primer elemento se convierte en el último.
+
 ``rb`` (rotar B): desplaza todos los elementos de la pila B hacia arriba en 1. El primer elemento se convierte en el último.
+
 ``rr``: ra y rb al mismo tiempo.
+
 ``rra`` (rotación inversa A): desplaza todos los elementos de la pila A hacia abajo en 1. El último elemento se convierte en el primero.
+
 ``rrb`` (rotación inversa B): desplaza todos los elementos de la pila b hacia abajo en 1. El último elemento se convierte en el primero.
+
 ``rrr``: ``rra`` y ``rrb`` al mismo tiempo.
+
 
 La calificación depende de qué tan eficiente sea el proceso de clasificación del programa.
 
 - Clasificación 3 valores: no más de 3 acciones.
 - Clasificación de 5 valores: no más de 12 acciones.
-> Clasificación de 100 valores: calificación de 1 a 5 puntos según el número de acciones:
+
+Clasificación de 100 valores: calificación de 1 a 5 puntos según el número de acciones:
 	- 5 puntos por menos de 700 acciones
 	- 4 puntos por menos de 900
 	- 3 puntos por menos de 1100
 	- 2 puntos por menos de 1300
 	- 1 punto por menos de 1500
   
-> Clasificación de 500 valores: calificación de 1 a 5 puntos según el número de acciones:
+Clasificación de 500 valores: calificación de 1 a 5 puntos según el número de acciones:
 	- 5 puntos por menos de 5500 acciones
 	- 4 puntos por menos de 7000
 	- 3 puntos por menos de 8500
