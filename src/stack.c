@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:38:36 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/11 18:38:38 by ahiguera         ###   ########.fr       */
+/*   Updated: 2024/03/11 18:54:19 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ t_stack	*stack_new(int value)
 	new->index = 0;
 	new->pos = -1;
 	new->target = -1;
-	new->cost_a = -1;
-	new->cost_b = -1;
+	new->box_a = -1;
+	new->box_b = -1;
 	new->next = NULL;
 	return (new);
 }

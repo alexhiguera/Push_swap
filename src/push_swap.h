@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:37:42 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/11 18:37:45 by ahiguera         ###   ########.fr       */
+/*   Updated: 2024/03/11 18:54:19 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ typedef struct s_stack
 	int				index;
 	int				pos;
 	int				target;
-	int				cost_a;
-	int				cost_b;
+	int				box_a;
+	int				box_b;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -59,7 +59,7 @@ void		get_target_position(t_stack **stack_a, t_stack **stack_b);
 void		cost(t_stack **stack_a, t_stack **stack_b);
 void		cheapest_move(t_stack **stack_a, t_stack **stack_b);
 int			abs(int nb);
-void		do_move(t_stack **a, t_stack **b, int cost_a, int cost_b);
+void		do_move(t_stack **a, t_stack **b, int box_a, int box_b);
 int			position_lowest_index(t_stack **stack);
 char		**ft_split(char const *s, char c);
 void		get_numbers(char *av, t_stack **stack_a);

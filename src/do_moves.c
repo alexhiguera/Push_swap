@@ -12,22 +12,22 @@
 
 #include "push_swap.h"
 
-static void	reverse_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
+static void	reverse_both(t_stack **a, t_stack **b, int *box_a, int *box_b)
 {
-	while (*cost_a < 0 && *cost_b < 0)
+	while (*box_a < 0 && *box_b < 0)
 	{
-		(*cost_a)++;
-		(*cost_b)++;
+		(*box_a)++;
+		(*box_b)++;
 		do_rrr(a, b);
 	}
 }
 
-static void	rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
+static void	rotate_both(t_stack **a, t_stack **b, int *box_a, int *box_b)
 {
-	while (*cost_a > 0 && *cost_b > 0)
+	while (*box_a > 0 && *box_b > 0)
 	{
-		(*cost_a)--;
-		(*cost_b)--;
+		(*box_a)--;
+		(*box_b)--;
 		do_rr(a, b);
 	}
 }
@@ -66,13 +66,13 @@ static void	rotate_b(t_stack **b, int *cost)
 	}
 }
 
-void	do_move(t_stack **a, t_stack **b, int cost_a, int cost_b)
+void	do_move(t_stack **a, t_stack **b, int box_a, int box_b)
 {
-	if (cost_a < 0 && cost_b < 0)
-		reverse_both(a, b, &cost_a, &cost_b);
-	else if (cost_a > 0 && cost_b > 0)
-		rotate_both(a, b, &cost_a, &cost_b);
-	rotate_a(a, &cost_a);
-	rotate_b(b, &cost_b);
+	if (box_a < 0 && box_b < 0)
+		reverse_both(a, b, &box_a, &box_b);
+	else if (box_a > 0 && box_b > 0)
+		rotate_both(a, b, &box_a, &box_b);
+	rotate_a(a, &box_a);
+	rotate_b(b, &box_b);
 	do_pa(a, b);
 }
