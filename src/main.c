@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:36:59 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/11 18:37:01 by ahiguera         ###   ########.fr       */
+/*   Updated: 2024/03/18 14:36:05 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	is_sorted(t_stack *stack)
 static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	if (stack_size == 2 && !is_sorted(*stack_a))
-		do_sa(stack_a);
+		sa(stack_a);
 	else if (stack_size == 3)
 		sort_three(stack_a);
 	else if (stack_size > 3 && !is_sorted(*stack_a))
@@ -48,7 +48,7 @@ void	get_numbers(char *av, t_stack **stack_a)
 			n = ft_atoi(param[i]);
 			if (n > INT_MAX || n < INT_MIN)
 				error_exit(stack_a, NULL);
-			stack_add(stack_a, stack_new(n));
+			add_stack(stack_a, new_stack(n));
 		}
 		else
 			error_exit(NULL, NULL);
@@ -75,7 +75,7 @@ int	main(int ac, char **av)
 	}
 	if (is_duplicate(stack_a))
 		error_exit(&stack_a, NULL);
-	stack_size = get_stack_size(stack_a);
+	stack_size = get_size_stack(stack_a);
 	get_index(stack_a, stack_size + 1);
 	push_swap(&stack_a, &stack_b, stack_size);
 	free_stack(&stack_a);

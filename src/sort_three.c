@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:38:17 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/11 18:38:20 by ahiguera         ###   ########.fr       */
+/*   Updated: 2024/03/18 14:33:39 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void	sort_three(t_stack **stack)
 		return ;
 	biggest = biggest_index(*stack);
 	if ((*stack)->index == biggest)
-		do_ra(stack);
+		ra(stack);
 	else if ((*stack)->next->index == biggest)
-		do_rra(stack);
+		rra(stack);
 	if ((*stack)->index > (*stack)->next->index)
-		do_sa(stack);
+		sa(stack);
 }

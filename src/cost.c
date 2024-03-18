@@ -21,8 +21,8 @@ void	cost(t_stack **stack_a, t_stack **stack_b)
 
 	tmp_a = *stack_a;
 	tmp_b = *stack_b;
-	size_a = get_stack_size(tmp_a);
-	size_b = get_stack_size(tmp_b);
+	size_a = get_size_stack(tmp_a);
+	size_b = get_size_stack(tmp_b);
 	while (tmp_b)
 	{
 		tmp_b->box_b = tmp_b->pos;
@@ -54,5 +54,5 @@ void	cheapest_move(t_stack **stack_a, t_stack **stack_b)
 		}
 		tmp = tmp->next;
 	}
-	do_move(stack_a, stack_b, box_a, box_b);
+	move(stack_a, stack_b, box_a, box_b);
 }

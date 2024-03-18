@@ -6,13 +6,13 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:38:36 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/11 18:54:19 by alex             ###   ########.fr       */
+/*   Updated: 2024/03/18 14:36:05 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*stack_new(int value)
+t_stack	*new_stack(int value)
 {
 	t_stack	*new;
 
@@ -29,7 +29,7 @@ t_stack	*stack_new(int value)
 	return (new);
 }
 
-void	stack_add(t_stack **stack, t_stack *new)
+void	add_stack(t_stack **stack, t_stack *new)
 {
 	t_stack	*bottom;
 
@@ -58,7 +58,7 @@ t_stack	*before_bottom(t_stack *stack)
 	return (stack);
 }
 
-int	get_stack_size(t_stack	*stack)
+int	get_size_stack(t_stack	*stack)
 {
 	int	size;
 

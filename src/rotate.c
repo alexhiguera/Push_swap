@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:38:08 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/11 18:39:12 by ahiguera         ###   ########.fr       */
+/*   Updated: 2024/03/18 14:33:30 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,19 @@ static void	rotate(t_stack **stack)
 	tail->next = tmp;
 }
 
-void	do_ra(t_stack **stack_a)
+void	ra(t_stack **stack_a)
 {
 	rotate(stack_a);
 	ft_putstr("ra\n");
 }
 
-void	do_rb(t_stack **stack_b)
+void	rb(t_stack **stack_b)
 {
 	rotate(stack_b);
 	ft_putstr("rb\n");
 }
 
-void	do_rr(t_stack **stack_a, t_stack **stack_b)
+void	rr(t_stack **stack_a, t_stack **stack_b)
 {
 	rotate(stack_a);
 	rotate(stack_b);

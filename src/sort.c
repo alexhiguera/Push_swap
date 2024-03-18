@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:38:24 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/11 18:38:26 by ahiguera         ###   ########.fr       */
+/*   Updated: 2024/03/18 14:36:05 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,23 @@ static void	push_init(t_stack **stack_a, t_stack **stack_b)
 	int	pushes;
 	int	i;
 
-	stack_size = get_stack_size(*stack_a);
+	stack_size = get_size_stack(*stack_a);
 	pushes = 0;
 	i = 0;
 	while (stack_size > 6 && i < stack_size && pushes < stack_size / 2)
 	{
 		if ((*stack_a)->index <= stack_size / 2)
 		{
-			do_pb(stack_a, stack_b);
+			pb(stack_a, stack_b);
 			pushes++;
 		}
 		else
-			do_ra(stack_a);
+			ra(stack_a);
 		i++;
 	}
 	while (stack_size - pushes > 3)
 	{
-		do_pb(stack_a, stack_b);
+		pb(stack_a, stack_b);
 		pushes++;
 	}
 }
@@ -44,13 +44,13 @@ static void	sort_stack(t_stack **stack_a)
 	int	lowest_p;
 	int	stack_size;
 
-	stack_size = get_stack_size(*stack_a);
+	stack_size = get_size_stack(*stack_a);
 	lowest_p = position_lowest_index(stack_a);
 	if (lowest_p > stack_size / 2)
 	{
 		while (lowest_p < stack_size)
 		{
-			do_rra(stack_a);
+			rra(stack_a);
 			lowest_p++;
 		}
 	}
@@ -58,7 +58,7 @@ static void	sort_stack(t_stack **stack_a)
 	{
 		while (lowest_p > 0)
 		{
-			do_ra(stack_a);
+			ra(stack_a);
 			lowest_p--;
 		}
 	}

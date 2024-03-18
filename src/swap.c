@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:38:47 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/11 18:38:49 by ahiguera         ###   ########.fr       */
+/*   Updated: 2024/03/18 14:33:10 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	swap(t_stack **stack)
 	(*stack)->next = tmp;
 }
 
-void	do_sa(t_stack **stack_a)
+void	sa(t_stack **stack_a)
 {
 	swap(stack_a);
 	ft_putstr("sa\n");
@@ -36,7 +36,7 @@ void	do_sb(t_stack **stack_b)
 	ft_putstr("sb\n");
 }
 
-void	do_ss(t_stack **stack_a, t_stack **stack_b)
+void	ss(t_stack **stack_a, t_stack **stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);

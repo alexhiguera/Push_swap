@@ -18,7 +18,7 @@ static void	reverse_both(t_stack **a, t_stack **b, int *box_a, int *box_b)
 	{
 		(*box_a)++;
 		(*box_b)++;
-		do_rrr(a, b);
+		rrr(a, b);
 	}
 }
 
@@ -28,7 +28,7 @@ static void	rotate_both(t_stack **a, t_stack **b, int *box_a, int *box_b)
 	{
 		(*box_a)--;
 		(*box_b)--;
-		do_rr(a, b);
+		rr(a, b);
 	}
 }
 
@@ -38,12 +38,12 @@ static void	rotate_a(t_stack **a, int *cost)
 	{
 		if (*cost > 0)
 		{
-			do_ra(a);
+			ra(a);
 			(*cost)--;
 		}
 		else if (*cost < 0)
 		{
-			do_rra(a);
+			rra(a);
 			(*cost)++;
 		}
 	}
@@ -55,18 +55,18 @@ static void	rotate_b(t_stack **b, int *cost)
 	{
 		if (*cost > 0)
 		{
-			do_rb(b);
+			rb(b);
 			(*cost)--;
 		}
 		else if (*cost < 0)
 		{
-			do_rrb(b);
+			rrb(b);
 			(*cost)++;
 		}
 	}
 }
 
-void	do_move(t_stack **a, t_stack **b, int box_a, int box_b)
+void	move(t_stack **a, t_stack **b, int box_a, int box_b)
 {
 	if (box_a < 0 && box_b < 0)
 		reverse_both(a, b, &box_a, &box_b);
@@ -74,5 +74,5 @@ void	do_move(t_stack **a, t_stack **b, int box_a, int box_b)
 		rotate_both(a, b, &box_a, &box_b);
 	rotate_a(a, &box_a);
 	rotate_b(b, &box_b);
-	do_pa(a, b);
+	pa(a, b);
 }
