@@ -3,73 +3,72 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+         #
+#    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/11 18:39:00 by ahiguera          #+#    #+#              #
-#    Updated: 2024/03/11 18:39:02 by ahiguera         ###   ########.fr        #
+#    Updated: 2024/03/18 13:40:13 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= pus_swap.exe
+#████████████████████████████ Configuration ███████████████████████████████████#
+NAME			= 	push_swap
+CC				=	gcc
+RM				=	rm -rf
+CFLAGS 			= 	-Wall -Wextra -Werror
 
-DEF_COLOR =		\033[0;39m
-GRAY =			\033[0;90m
-RED =			\033[0;91m
-GREEN =			\033[0;92m
-YELLOW =		\033[0;93m
-BLUE =			\033[0;94m
-MAGENTA =		\033[0;95m
-CYAN =			\033[0;96m
-WHITE =			\033[0;97m
-BLACK =			\033[0;99m
-ORANGE =		\033[38;5;209m
-BROWN =			\033[38;2;184;143;29m
-DARK_GRAY =		\033[38;5;234m
-MID_GRAY =		\033[38;5;245m
-DARK_GREEN =	\033[38;2;75;179;82m
-DARK_YELLOW =	\033[38;5;143m
+#██████████████████████████████ Colors ████████████████████████████████████████#
+DEF_COLOR 		=	\033[0;39m
+GRAY 			=	\033[0;90m
+RED 			=	\033[0;91m
+GREEN 			=	\033[0;92m
+YELLOW 			=	\033[0;93m
+BLUE 			=	\033[0;94m
+MAGENTA 		=	\033[0;95m
+CYAN 			=	\033[0;96m
+WHITE 			=	\033[0;97m
+BLACK 			=	\033[0;99m
+ORANGE 			=	\033[38;5;209m
+DARK_GRAY 		=	\033[38;5;234m
+MID_GRAY 		=	\033[38;5;245m
+DARK_YELLOW 	=	\033[38;5;143m
+DARK_GREEN 		=	\033[38;2;75;179;82m
+BROWN 			=	\033[38;2;184;143;29m
 
-CFLAGS 	= -Wall -Wextra -Werror
-SILENCE = -s
+#█████████████████████████████ SOURCES █████████████████████████████████████████#
+SRC_DIR			=	./src/
+SRC 			= 	$(SRC_DIR)main.c 		$(SRC_DIR)cost.c					\
+					$(SRC_DIR)do_moves.c 	$(SRC_DIR)position.c				\
+					$(SRC_DIR)push.c 		$(SRC_DIR)reverse_rotate.c			\
+					$(SRC_DIR)split.c 		$(SRC_DIR)rotate.c 					\
+					$(SRC_DIR)sort_three.c	$(SRC_DIR)swap.c					\
+					$(SRC_DIR)stack.c 		$(SRC_DIR)start.c					\
+					$(SRC_DIR)sort.c 		$(SRC_DIR)utils.c					\
 
-SRC = main.c \
-		cost.c do_moves.c position.c \
-		push.c reverse_rotate.c \
-		split.c rotate.c sort_three.c sort.c \
-		stack.c start.c swap.c utils.c 
+LIBFT			=	Libft_2.0/
 
-OBJS 	= ${SRC:.c=.o}
+#███████████████████████████████████████████████████████████████████████████████#
 
-LIBFT_DIR = ./Libft_2.0/
+all:$(NAME)
 
-.c.o:		%.o : %.c
-					@echo "$(YELLOW)Compiling   ${RED}→   $(GREEN)$< $(DEF_COLOR)"
-					@gcc ${CFLAGS} -c $< -o $(<:.c=.o)
-
-all: 		${NAME}
-
-${NAME}:	${OBJS}
-					@echo "\033[32m *** Compiling dependencies... ***"
-					@make re -C $(LIBFT_DIR) ${SILENCE}
-					@make clean -C $(LIBFT_DIR) ${SILENCE}
-					@gcc ${OBJS} -L Libft_2.0 -lft -o ${NAME}
-					@echo "\033[36m Push_swap Compiled! o.o\n"
+$(NAME): 	$(SRC)
+					@echo "$(GREEN)nCompiling dependencies...\n"
+					@make re -C $(LIBFT) -s
+					@$(CC) $(CFLAGS) Libft_2.0/libft.a $(SRC) -o $(NAME) 
+					@echo "$(CYAN)\nPush_swap Compiled!\n"
 
 clean:
-					@make clean -C $(LIBFT_DIR)
-					@rm -f ${OBJS}
+					@make clean -C $(LIBFT)
 
 fclean: 	clean
-					@make fclean -C $(LIBFT_DIR) ${SILENCE}
-					@rm -f $(NAME)
-					@echo "\n\033[35m Deleting EVERYTHING! (-_-)\n"
-					@echo "$$ART"
+					@make fclean -C $(LIBFT)
+					@$(RM) $(NAME)
+					@echo "$(RED)\nDeleting EVERYTHING!\n"
 
-re:			fclean all
 
-norminette:
-		clear
-		norminette src/
-		norminette libft/
+normi:
+					clear
+					norminette src/
 
-.PHONY: all clean fclean re norminette
+re: 		fclean all 
+
+.PHONY: 	all clean fclean re
