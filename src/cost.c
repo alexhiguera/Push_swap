@@ -37,22 +37,22 @@ void	cost(t_stack **stack_a, t_stack **stack_b)
 
 void	cheapest_move(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack		*tmp;
+	t_stack		*temp;
 	int			cheapest;
 	int			box_a;
 	int			box_b;
 
-	tmp = *stack_b;
+	temp = *stack_b;
 	cheapest = INT_MAX;
-	while (tmp)
+	while (temp)
 	{
-		if (abs(tmp->box_a) + abs(tmp->box_b) < cheapest)
+		if (abs(temp->box_a) + abs(temp->box_b) < cheapest)
 		{
-			cheapest = abs(tmp->box_a) + abs(tmp->box_b);
-			box_a = tmp->box_a;
-			box_b = tmp->box_b;
+			cheapest = abs(temp->box_a) + abs(temp->box_b);
+			box_a = temp->box_a;
+			box_b = temp->box_b;
 		}
-		tmp = tmp->next;
+		temp = temp->next;
 	}
 	move(stack_a, stack_b, box_a, box_b);
 }
