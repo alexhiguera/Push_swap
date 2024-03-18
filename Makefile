@@ -6,7 +6,7 @@
 #    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/11 18:39:00 by ahiguera          #+#    #+#              #
-#    Updated: 2024/03/18 20:44:43 by alex             ###   ########.fr        #
+#    Updated: 2024/03/18 21:18:39 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ LIBFT			=	Libft_2.0/
 all:$(NAME)
 
 $(NAME): 	$(SRC)
-					@echo "$(GREEN)nCompiling push_swap...\n"
+					@echo "$(GREEN)\nCompiling push_swap...\n"
 					@make re -C $(LIBFT) -s
 					@$(CC) $(CFLAGS) $(LIBFT)libft.a $(SRC) -o $(NAME) 
 					@echo "$(GREEN)\n✔️ Push_swap Compiled!\n"
