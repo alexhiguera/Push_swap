@@ -6,7 +6,7 @@
 #    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/11 18:39:00 by ahiguera          #+#    #+#              #
-#    Updated: 2024/03/18 15:53:51 by alex             ###   ########.fr        #
+#    Updated: 2024/03/18 20:44:43 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,10 +50,10 @@ LIBFT			=	Libft_2.0/
 all:$(NAME)
 
 $(NAME): 	$(SRC)
-					@echo "$(GREEN)nCompiling dependencies...\n"
+					@echo "$(GREEN)nCompiling push_swap...\n"
 					@make re -C $(LIBFT) -s
-					@$(CC) $(CFLAGS) Libft_2.0/libft.a $(SRC) -o $(NAME) 
-					@echo "$(CYAN)\nPush_swap Compiled!\n"
+					@$(CC) $(CFLAGS) $(LIBFT)libft.a $(SRC) -o $(NAME) 
+					@echo "$(GREEN)\n✔️ Push_swap Compiled!\n"
 
 clean:
 					@make clean -C $(LIBFT)
@@ -61,7 +61,7 @@ clean:
 fclean: 	clean
 					@make fclean -C $(LIBFT)
 					@$(RM) $(NAME)
-					@echo "$(RED)\nDeleting EVERYTHING!\n"
+					@echo "$(RED)\nEVERYTHING Deleted!\n"
 
 
 normi:
