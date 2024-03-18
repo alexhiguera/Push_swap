@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:38:24 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/18 14:36:05 by alex             ###   ########.fr       */
+/*   Updated: 2024/03/18 15:51:27 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,33 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 	}
 	if (!is_sorted(*stack_a))
 		sort_stack(stack_a);
+}
+
+static int	biggest_index(t_stack *stack)
+{
+	int	index;
+
+	index = stack->index;
+	while (stack)
+	{
+		if (stack->index > index)
+			index = stack->index;
+		stack = stack->next;
+	}
+	return (index);
+}
+
+void	sort_three(t_stack **stack)
+{
+	int	biggest;
+
+	if (is_sorted(*stack))
+		return ;
+	biggest = biggest_index(*stack);
+	if ((*stack)->index == biggest)
+		ra(stack);
+	else if ((*stack)->next->index == biggest)
+		rra(stack);
+	if ((*stack)->index > (*stack)->next->index)
+		sa(stack);
 }

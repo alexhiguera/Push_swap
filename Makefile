@@ -6,7 +6,7 @@
 #    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/11 18:39:00 by ahiguera          #+#    #+#              #
-#    Updated: 2024/03/18 14:16:02 by alex             ###   ########.fr        #
+#    Updated: 2024/03/18 15:53:51 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,13 +36,12 @@ BROWN 			=	\033[38;2;184;143;29m
 
 #█████████████████████████████ SOURCES █████████████████████████████████████████#
 SRC_DIR			=	./src/
-SRC 			= 	$(SRC_DIR)main.c 		$(SRC_DIR)cost.c					\
-					$(SRC_DIR)do_moves.c 	$(SRC_DIR)position.c				\
+SRC 			= 	$(SRC_DIR)push_swap.c 	$(SRC_DIR)cost.c					\
+					$(SRC_DIR)moves.c 		$(SRC_DIR)position.c				\
 					$(SRC_DIR)push.c 		$(SRC_DIR)reverse_rotate.c			\
-					$(SRC_DIR)sort_three.c	$(SRC_DIR)swap.c					\
+					$(SRC_DIR)rotate.c		$(SRC_DIR)swap.c					\
 					$(SRC_DIR)stack.c 		$(SRC_DIR)start.c					\
 					$(SRC_DIR)sort.c 		$(SRC_DIR)utils.c					\
-					$(SRC_DIR)rotate.c			 								\
 
 LIBFT			=	Libft_2.0/
 
@@ -67,8 +66,8 @@ fclean: 	clean
 
 normi:
 					clear
-					norminette src/
+					norminette $(SRC_DIR)
 
 re: 		fclean all 
 
-.PHONY: 	all clean fclean re
+.PHONY: 	all clean fclean normi re
