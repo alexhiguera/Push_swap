@@ -6,15 +6,15 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:37:42 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/11 18:54:19 by alex             ###   ########.fr       */
+/*   Updated: 2024/03/16 17:54:46 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "../Libft_2.0/src/libft.h"
 # include <stddef.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
@@ -33,7 +33,6 @@ typedef struct s_stack
 long		input_is_correct(char *av);
 void		error_exit(t_stack **stack_a, t_stack **stack_b);
 void		free_stack(t_stack **stack);
-long int	ft_atoi(const char *str);
 void		get_index(t_stack *stack_a, int stack_size);
 t_stack		*stack_new(int value);
 void		stack_add(t_stack **stack, t_stack *new);
@@ -61,9 +60,7 @@ void		cheapest_move(t_stack **stack_a, t_stack **stack_b);
 int			abs(int nb);
 void		do_move(t_stack **a, t_stack **b, int box_a, int box_b);
 int			position_lowest_index(t_stack **stack);
-char		**ft_split(char const *s, char c);
 void		get_numbers(char *av, t_stack **stack_a);
 int			is_duplicate(t_stack *column);
-size_t		ft_strlen(const char *s);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:38:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/11 18:38:55 by ahiguera         ###   ########.fr       */
+/*   Updated: 2024/03/16 17:55:18 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,30 +36,6 @@ void	error_exit(t_stack **stack_a, t_stack **stack_b)
 		free_stack(stack_b);
 	write(2, "Error\n", 6);
 	exit(1);
-}
-
-long int	ft_atoi(const char *str)
-{
-	long int	nb;
-	int			isneg;
-	int			i;
-
-	nb = 0;
-	isneg = 1;
-	i = 0;
-	if (str[i] == '+')
-		i++;
-	else if (str[i] == '-')
-	{
-		isneg *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = (nb * 10) + (str[i] - '0');
-		i++;
-	}
-	return (nb * isneg);
 }
 
 void	ft_putstr(char *str)
