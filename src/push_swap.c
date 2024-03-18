@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:36:59 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/18 19:33:45 by alex             ###   ########.fr       */
+/*   Updated: 2024/03/18 19:48:56 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 		sort(stack_a, stack_b);
 }
 
-void	get_numbers(char *av, t_stack **stack_a)
+void	get_numbers(char *argv, t_stack **stack_a)
 {
 	char		**param;
 	long int	n;
 	int			i;
 
-	param = ft_split(av, ' ');
+	param = ft_split(argv, ' ');
 	i = 0;
 	while (param[i])
 	{
@@ -58,7 +58,7 @@ void	get_numbers(char *av, t_stack **stack_a)
 	free(param);
 }
 
-int	main(int ac, char **av)
+int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
@@ -68,9 +68,9 @@ int	main(int ac, char **av)
 	i = 1;
 	stack_b = NULL;
 	stack_a = NULL;
-	while (i < ac)
+	while (i < argc)
 	{
-		get_numbers(av[i], &stack_a);
+		get_numbers(argv[i], &stack_a);
 		i++;
 	}
 	if (is_duplicate(stack_a))
