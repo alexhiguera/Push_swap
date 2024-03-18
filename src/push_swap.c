@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:36:59 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/18 14:36:05 by alex             ###   ########.fr       */
+/*   Updated: 2024/03/18 19:33:45 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	get_numbers(char *av, t_stack **stack_a)
 	{
 		if (input_is_correct(param[i]))
 		{
-			n = ft_atoi(param[i]);
+			n = ft_atol(param[i]);
 			if (n > INT_MAX || n < INT_MIN)
 				error_exit(stack_a, NULL);
 			add_stack(stack_a, new_stack(n));
