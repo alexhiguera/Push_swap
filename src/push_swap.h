@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:37:42 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/18 15:52:27 by alex             ###   ########.fr       */
+/*   Updated: 2024/03/18 15:57:58 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include "../Libft_2.0/src/libft.h"
 # include <stddef.h>
-# include <stdlib.h>
-# include <unistd.h>
 # include <limits.h>
 
 typedef struct s_stack
