@@ -23,7 +23,7 @@ echo "realizando pruebas..."
 for i in $(seq $TOTAL)
 do
 	ARG=$(seq -$lenlist $lenlist | sort -R | head -n $lenlist | tr '\n' ' ')
-	echo $ARG | >> logs.txt
+	#echo $ARG >> logs.txt
 	ret=$(./push_swap $ARG | wc -l)
 	ret2=$(./push_swap $ARG | ./tests/checker_Mac $ARG )
 	var=$(($ret + $var))

@@ -6,7 +6,7 @@
 #    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/11 18:39:00 by ahiguera          #+#    #+#              #
-#    Updated: 2024/03/19 16:29:47 by alex             ###   ########.fr        #
+#    Updated: 2024/03/19 17:46:44 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,16 +65,22 @@ fclean: 	clean
 
 re: 		fclean all 
 
-.PHONY: 	all clean fclean re normi exec
+.PHONY: 	all clean fclean re normi exec test
 
 #█████████████████████████████ Custom rules ████████████████████████████████████#
 
-exec:
-					@make re
+test:
+					@make
 					clear
 					@echo "$(YELLOW)  Siga las instrucciones:\n$(WHITE)"
 					@echo "--------------------------\n"
-					@./tests/tester.sh  
+					@./tests/tester.sh
+
+exec:
+					@make
+					clear
+					@echo "$(YELLOW)Va a ser un test muy largo:\n$(WHITE)"
+					@./tests/push_swap_test.sh
 
 normi:
 					clear
