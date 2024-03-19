@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:38:53 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/16 17:55:18 by alex             ###   ########.fr       */
+/*   Updated: 2024/03/18 21:34:32 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	error_exit(t_stack **stack_a, t_stack **stack_b)
 		free_stack(stack_a);
 	if (stack_b == NULL || *stack_b != NULL)
 		free_stack(stack_b);
-	write(2, "Error\n", 6);
+	ft_printf("Exit error\n");
 	exit(1);
 }
 
