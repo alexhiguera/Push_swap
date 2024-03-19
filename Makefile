@@ -6,7 +6,7 @@
 #    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/11 18:39:00 by ahiguera          #+#    #+#              #
-#    Updated: 2024/03/18 21:18:39 by alex             ###   ########.fr        #
+#    Updated: 2024/03/19 16:29:47 by alex             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,12 +47,12 @@ LIBFT			=	Libft_2.0/
 
 #███████████████████████████████████████████████████████████████████████████████#
 
-all:$(NAME)
+all:		$(NAME)
 
 $(NAME): 	$(SRC)
 					@echo "$(GREEN)\nCompiling push_swap...\n"
 					@make re -C $(LIBFT) -s
-					@$(CC) $(CFLAGS) $(LIBFT)libft.a $(SRC) -o $(NAME) 
+					@$(CC) $(CFLAGS) $(LIBFT)libft.a $(SRC) -o $(NAME)
 					@echo "$(GREEN)\n✔️ Push_swap Compiled!\n"
 
 clean:
@@ -63,11 +63,19 @@ fclean: 	clean
 					@$(RM) $(NAME)
 					@echo "$(RED)\nEVERYTHING Deleted!\n"
 
+re: 		fclean all 
+
+.PHONY: 	all clean fclean re normi exec
+
+#█████████████████████████████ Custom rules ████████████████████████████████████#
+
+exec:
+					@make re
+					clear
+					@echo "$(YELLOW)  Siga las instrucciones:\n$(WHITE)"
+					@echo "--------------------------\n"
+					@./tests/tester.sh  
 
 normi:
 					clear
 					norminette $(SRC_DIR)
-
-re: 		fclean all 
-
-.PHONY: 	all clean fclean normi re
