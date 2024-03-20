@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:37:42 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/18 15:57:58 by alex             ###   ########.fr       */
+/*   Updated: 2024/03/20 13:45:39 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ typedef struct s_stack
 }	t_stack;
 
 //cost
-void		cost(t_stack **stack_a, t_stack **stack_b);
-void		cheapest_move(t_stack **stack_a, t_stack **stack_b);
+void		calculate_move_cost(t_stack **stack_a, t_stack **stack_b);
+void		best_move(t_stack **stack_a, t_stack **stack_b);
 
 //moves
 void		move(t_stack **a, t_stack **b, int box_a, int box_b);

@@ -12,7 +12,9 @@
 
 #include "push_swap.h"
 
-void	cost(t_stack **stack_a, t_stack **stack_b)
+/* calculates the minimum number of operations required to move each element */
+
+void	calculate_move_cost(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp_a;
 	t_stack	*tmp_b;
@@ -35,7 +37,9 @@ void	cost(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-void	cheapest_move(t_stack **stack_a, t_stack **stack_b)
+/* finds and performs the most efficient move to transfer an element */
+
+void	best_move(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack		*temp;
 	int			cheapest;

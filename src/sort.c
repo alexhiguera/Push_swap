@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:38:24 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/03/18 15:51:27 by alex             ###   ########.fr       */
+/*   Updated: 2024/03/20 13:45:39 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 	while (*stack_b)
 	{
 		get_target_position(stack_a, stack_b);
-		cost(stack_a, stack_b);
-		cheapest_move(stack_a, stack_b);
+		calculate_move_cost(stack_a, stack_b);
+		best_move(stack_a, stack_b);
 	}
 	if (!is_sorted(*stack_a))
 		sort_stack(stack_a);
