@@ -53,7 +53,7 @@ make exec
 make normi
 ```
 
-## 📏 Reglas y la calificacón
+## 📏 Rules
 
 The program can only work with two stacks, Stack A and Stack B. All numbers are initially added to Stack A, while Stack B is empty.
 
