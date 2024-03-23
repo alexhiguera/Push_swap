@@ -2,71 +2,103 @@
   <img src="https://raw.githubusercontent.com/ridaelfagrouch/push_swap_42/main/assets/push_swap.png" alt="Push_swap 42 project badge"/>
 </p>
 
-# Push swap
+Push_swap is a 42 School algorithm project where we aim to sort a given list of random numbers using a limited set of instructions, striving to achieve the minimum number of actions.
 
-Push_swap es un proyecto de algoritmia de 42 escohol en el que debemos ordenar una lista determinada de números aleatorios con un conjunto limitado de instrucciones, utilizando el menor número posible de acciones.
+## ✨ Usage
 
-### Uso
-
-Clona el repositorio y entra en él con cd. Luego usa make para compilar.
+Clone the repository
 ```Bash
 git clone git@github.com:alexhiguera/Push_swap.git
 ```
-Despues corre esto:
+
+Download the dependencies:
+```BASH
+git submodule init
+git submodule update
+```
+execute Makefile
+```BASH
+make
+```
+Then run:
 ```Bash
 ./push_swap <numbers>
 ```
-Los números proporcionados pueden ser enteros positivos o negativos. No debe haber duplicados. Por ejemplo:
+The provided numbers can be positive or negative integers, and duplicates are not allowed. For example:
 ```Bash
 ./push_swap 6 0 -8776 2147483647 -2147483648
 ```
-Si los argumentos son válidos, el programa mostrará la lista de acciones más eficiente para ordenar la lista.
+If the arguments are valid, the program will display the most efficient list of actions to sort the list.
 
-El programa puede ser verificado con el comprobador proporcionado, de esta manera:
+The program can be verified using the provided checker in the following manner:
 ```Bash
 ARG="5 7 9 2 -4"; ./push_swap $ARG | ./tests/checker_Mac $ARG
 ```
 
-Puedes visualizar este algoritmo push_swap en acción con el [visualizador de push_swap de O-reo](https://github.com/o-reo/push_swap_visualizer)
+## 🔎 Control tests
 
-## Reglas y la calificacón
+I have created rules in the Makefile to verify the correct functioning of the program.
 
-El programa solo puede trabajar con dos pilas, la pila A y la pila B. Todos los números se suman inicialmente a la pila A y B está vacía.
+🧮 **Interactive test**
+```BASH
+make test
+```
+🛹 **Stress test**
+```BASH
+make exec
+```
 
-Las posibles acciones son:
+🎯 **Norminette test**
+```BASH
+make normi
+```
 
-|	Rules			|	Definition																																|
-|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-|	``pa`` 			| (empujar A): toma el primer elemento en la parte superior de B y colócalo en la parte superior de A. No hagas nada si B está vacío. 		|
-|	``pb``			| (empujar B): Tome el primer elemento en la parte superior de A y colóquelo en la parte superior de B. No haga nada si A está vacío. 		|
-|	``sa``			| (intercambio A): intercambia los primeros 2 elementos en la parte superior de la pila A. No hagas nada si solo hay uno o ningún elemento. |
-|	``sb``			| (intercambio B): intercambia los primeros 2 elementos en la parte superior de la pila B. No hagas nada si solo hay uno o ningún elemento. |
-|	``ss``			| ``sa`` y ``sb`` al mismo tiempo.																											|
-|	``ra`` 			| (rotar A): desplaza todos los elementos de la pila A hacia arriba en 1. El primer elemento se convierte en el último.						|
-|	``rb``			| (rotar B): desplaza todos los elementos de la pila B hacia arriba en 1. El primer elemento se convierte en el último.						|
-|	``rr``			| ra y rb al mismo tiempo.																													|
-|	``rra``			| (rotación inversa A): desplaza todos los elementos de la pila A hacia abajo en 1. El último elemento se convierte en el primero.			|
-|	``rrb``			| (rotación inversa B): desplaza todos los elementos de la pila b hacia abajo en 1. El último elemento se convierte en el primero.			|
-|	``rrr``			| ``rra`` y ``rrb`` al mismo tiempo.																										|
+## 📏 Reglas y la calificacón
+
+The program can only work with two stacks, Stack A and Stack B. All numbers are initially added to Stack A, while Stack B is empty.
+
+The possible actions are:
+
+|	Rules			|	Definition																												|
+|-------------------|---------------------------------------------------------------------------------------------------------------------------|
+|	``pa`` 			| (push A): Take the first element at the top of stack B and place it at the top of stack A. Do nothing if stack B is empty.|
+|	``pb``			| (push B): ake the first element at the top of stack A and place it at the top of stack B. Do nothing if stack A is empty.	|
+|	``sa``			| (swap A): Swap the first 2 elements at the top of stack A. Do nothing if there's only one or no elements.					|
+|	``sb``			| (swap B): Swap the first 2 elements at the top of stack B. Do nothing if there's only one or no elements.					|
+|	``ss``			| ``sa`` and ``sb`` at the same time.																						|
+|	``ra`` 			| (rotate A): Shift all elements of stack A up by 1. The first element becomes the last.									|
+|	``rb``			| rotate B): Shift all elements of stack B up by 1. The first element becomes the last."									|
+|	``rr``			| ra y rb at the same time.																									|
+|	``rra``			| (reverse rotate A): Shift all elements of stack A down by 1. The last element becomes the first.							|
+|	``rrb``			| (reverse rotate B): Shift all elements of stack B down by 1. The last element becomes the first.							|
+|	``rrr``			| ``rra`` and ``rrb`` at the same time.																						|
+
+## 📝 Evaluation grade
+The grading depends on how efficient the sorting process of the program is.
+
+	
+	Sorting 3 values: no more than 3 actions
+	Sorting 5 values: no more than 12 actions
 
 
-### La calificación depende de qué tan eficiente sea el proceso de clasificación del programa.
+Sorting 100 values: rating from 1 to 5 points based on the number of actions:
 
-- Clasificación 3 valores: no más de 3 acciones.
-- Clasificación de 5 valores: no más de 12 acciones.
+	50 points for fewer than 700 actions
+	40 points for fewer than 900 actions
+	30 points for fewer than 1100 actions
+	20 points for fewer than 1300 actions
+	10 point for fewer than 1500 actions
 
-Clasificación de 100 valores: calificación de 1 a 5 puntos según el número de acciones:
+Sorting 500 values: rating from 1 to 5 points based on the number of actions:
 
-	- 5 puntos por menos de 700 acciones
-	- 4 puntos por menos de 900
-	- 3 puntos por menos de 1100
-	- 2 puntos por menos de 1300
-	- 1 punto por menos de 1500
-  
-Clasificación de 500 valores: calificación de 1 a 5 puntos según el número de acciones:
+	50 points for fewer than 5500 actions
+	40 points for fewer than 7000 actions
+	30 points for fewer than 8500 actions
+	20 points for fewer than 10000 actions
+	10 point for fewer than 11500 actions
+## 👓 VIsualizer
+❕ You can visualize this push_swap algorithm in action with the [O-reo's push_swap visualizer](https://github.com/o-reo/push_swap_visualizer).
 
-	- 5 puntos por menos de 5500 acciones
-	- 4 puntos por menos de 7000
-	- 3 puntos por menos de 8500
-	- 2 puntos por menos de 10000
-	- 1 punto por menos de 11500
+## 📎 Dependencies
+
+Libft: my own library with basic functions [libft_2.0](https://github.com/alexhiguera/Libft_2.0).
